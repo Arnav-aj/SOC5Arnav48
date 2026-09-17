@@ -1,0 +1,53 @@
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Student
+{
+private:
+int rollNumber;
+string name;
+float marks;
+
+public:
+void accept()
+{
+cout &lt;&lt; &quot;Enter Roll Number: &quot;;
+cin &gt;&gt; rollNumber;
+
+cout &lt;&lt; &quot;Enter Name: &quot;;
+cin.ignore();
+getline(cin, name);
+
+cout &lt;&lt; &quot;Enter Marks: &quot;;
+cin &gt;&gt; marks;
+}
+
+void calculateResult()
+{
+if (marks &gt;= 40)
+cout &lt;&lt; &quot;Result: Pass&quot; &lt;&lt; endl;
+else
+cout &lt;&lt; &quot;Result: Fail&quot; &lt;&lt; endl;
+}
+
+void display()
+{
+cout &lt;&lt; &quot;\n--- Student Details ---&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Roll Number: &quot; &lt;&lt; rollNumber &lt;&lt; endl;
+cout &lt;&lt; &quot;Name: &quot; &lt;&lt; name &lt;&lt; endl;
+cout &lt;&lt; &quot;Marks: &quot; &lt;&lt; marks &lt;&lt; endl;
+
+calculateResult();
+}
+};
+
+int main()
+{
+Student s;
+
+s.accept();
+s.display();
+
+return 0;
+}
